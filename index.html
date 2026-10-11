@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafe ひだまり</title>
+<meta name="description" content="自家焙煎コーヒーと手作り焼き菓子の小さなカフェ「Cafe ひだまり」">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&family=Shippori+Mincho:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6ef;
+    --surface: #fffdf8;
+    --ink: #3b2f27;
+    --muted: #7a6a5d;
+    --accent: #b5652b;
+    --accent-soft: #f1e1cf;
+    --line: #e7dccd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Zen Maru Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(250, 246, 239, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: "Shippori Mincho", serif; font-size: 1.35rem; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  nav a { margin-left: 22px; text-decoration: none; font-size: .95rem; color: var(--muted); }
+  nav a:hover { color: var(--accent); }
+
+  .hero {
+    min-height: 78vh;
+    display: grid; place-items: center; text-align: center;
+    background:
+      linear-gradient(rgba(59,47,39,.45), rgba(59,47,39,.45)),
+      url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=70") center/cover;
+    color: #fff;
+    padding: 80px 20px;
+  }
+  .hero h1 { font-family: "Shippori Mincho", serif; font-size: clamp(2rem, 6vw, 3.6rem); letter-spacing: .08em; }
+  .hero p { margin-top: 12px; font-size: clamp(1rem, 2.4vw, 1.2rem); }
+  .btn {
+    display: inline-block; margin-top: 28px; padding: 12px 30px;
+    background: var(--accent); color: #fff; border-radius: 999px; text-decoration: none;
+  }
+  .btn:hover { opacity: .9; }
+
+  section { padding: 88px 0; }
+  .section-title { text-align: center; margin-bottom: 44px; }
+  .section-title h2 { font-family: "Shippori Mincho", serif; font-size: 1.9rem; letter-spacing: .1em; }
+  .section-title p { color: var(--accent); font-size: .85rem; letter-spacing: .3em; }
+
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .about img { width: 100%; border-radius: 16px; aspect-ratio: 4/3; object-fit: cover; }
+  .about p + p { margin-top: 1em; }
+
+  #menu { background: var(--surface); border-block: 1px solid var(--line); }
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .menu-card { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+  .menu-card h3 { font-size: 1.15rem; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-soft); }
+  .menu-card li { list-style: none; display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; }
+  .menu-card li span:last-child { color: var(--muted); white-space: nowrap; }
+
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .info dl { display: grid; grid-template-columns: 6em 1fr; row-gap: 14px; }
+  .info dt { color: var(--accent); font-weight: 700; }
+  .map {
+    border-radius: 16px; overflow: hidden; border: 1px solid var(--line); min-height: 280px;
+  }
+  .map iframe { width: 100%; height: 100%; min-height: 280px; border: 0; }
+
+  footer { text-align: center; padding: 36px 20px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+
+  @media (max-width: 760px) {
+    nav a { margin-left: 14px; font-size: .85rem; }
+    .about, .info { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Cafe <span>ひだまり</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#access">Access</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Cafe ひだまり</h1>
+    <p>自家焙煎コーヒーと、手作りの焼き菓子。<br>陽だまりのような、ほっとする時間を。</p>
+    <a class="btn" href="#menu">メニューを見る</a>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-title"><p>ABOUT</p><h2>ひだまりについて</h2></div>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=70" alt="木のぬくもりを感じる店内">
+      <div>
+        <p>住宅街の一角にある、席数16の小さなカフェです。毎朝店内で焙煎する豆を使い、一杯ずつハンドドリップでお淹れしています。</p>
+        <p>季節の果物を使ったタルトやスコーンも、すべて店内で手作り。読書をしたり、おしゃべりをしたり、思い思いの時間をお過ごしください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-title"><p>MENU</p><h2>メニュー</h2></div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>☕ コーヒー</h3>
+        <ul>
+          <li><span>ひだまりブレンド</span><span>¥550</span></li>
+          <li><span>深煎りマンデリン</span><span>¥600</span></li>
+          <li><span>カフェラテ</span><span>¥620</span></li>
+          <li><span>水出しアイスコーヒー</span><span>¥580</span></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🍰 スイーツ</h3>
+        <ul>
+          <li><span>季節のフルーツタルト</span><span>¥680</span></li>
+          <li><span>自家製スコーン</span><span>¥420</span></li>
+          <li><span>濃厚チーズケーキ</span><span>¥580</span></li>
+          <li><span>ケーキセット</span><span>¥1,050</span></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🥪 フード</h3>
+        <ul>
+          <li><span>厚焼き玉子サンド</span><span>¥780</span></li>
+          <li><span>ひだまりトースト</span><span>¥650</span></li>
+          <li><span>本日のスープ</span><span>¥480</span></li>
+          <li><span>モーニングセット</span><span>¥750</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="section-title"><p>ACCESS</p><h2>店舗情報</h2></div>
+    <div class="info">
+      <dl>
+        <dt>住所</dt><dd>〒400-0000<br>山梨県甲府市ひだまり町1-2-3</dd>
+        <dt>営業時間</dt><dd>8:00 – 18:00（L.O. 17:30）</dd>
+        <dt>定休日</dt><dd>毎週水曜日</dd>
+        <dt>電話</dt><dd>000-000-0000</dd>
+        <dt>席数</dt><dd>16席（全席禁煙）</dd>
+      </dl>
+      <div class="map">
+        <iframe title="地図" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=138.55%2C35.65%2C138.59%2C35.68&amp;layer=mapnik"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>※ このサイトは GitHub Pages のテスト用に作成した架空の店舗です。</p>
+  <p>&copy; 2026 Cafe ひだまり</p>
+</footer>
+</body>
+</html>
